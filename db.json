@@ -21,6 +21,28 @@
       "arrival_date": "2017-05-02T11:00:00Z",
       "delivery_date": "2017-05-07T11:00:00Z",
       "status": "under repair"
+    },
+    {
+      "id": 3,
+      "name": "Boat Three",
+      "type": "Motor",
+      "photo": "http://via.placeholder.com/350x150",
+      "length": 3.3,
+      "work_description": "Needs a new engine",
+      "arrival_date": "2017-05-12T11:00:00Z",
+      "delivery_date": "2017-05-27T11:00:00Z",
+      "status": "under repair"
+    },
+    {
+      "id": 4,
+      "name": "Boat Four",
+      "type": "Motor",
+      "photo": "http://via.placeholder.com/350x150",
+      "length": 23.3,
+      "work_description": "Needs a new engine",
+      "arrival_date": "2017-06-12T11:00:00Z",
+      "delivery_date": "2017-07-27T11:00:00Z",
+      "status": "under repair"
     }
   ],
   "workers": [
@@ -31,8 +53,7 @@
       "photo": "http://via.placeholder.com/150x150/DE8142",
       "boatIds": [
         1,
-        3,
-        4
+        2
       ]
     },
     {
@@ -41,7 +62,24 @@
       "phone": "22222222",
       "photo": "http://via.placeholder.com/150x150/B66AA3",
       "boatIds": [
-        3,
+        2
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Worker Three",
+      "phone": "333333333",
+      "photo": "http://via.placeholder.com/150x150/B66AA3",
+      "boatIds": [
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Worker Four",
+      "phone": "444444444",
+      "photo": "http://via.placeholder.com/150x150/B66AA3",
+      "boatIds": [
         2,
         4
       ]
