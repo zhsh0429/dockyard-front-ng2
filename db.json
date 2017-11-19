@@ -26,11 +26,13 @@
   "workers": [
     {
       "id": 1,
-      "name": "Worker One",
+      "name": "worker One",
       "phone": "11111111",
       "photo": "http://via.placeholder.com/150x150/DE8142",
       "boatIds": [
-        1
+        1,
+        3,
+        4
       ]
     },
     {
@@ -39,8 +41,9 @@
       "phone": "22222222",
       "photo": "http://via.placeholder.com/150x150/B66AA3",
       "boatIds": [
-        1,
-        2
+        3,
+        2,
+        4
       ]
     }
   ]

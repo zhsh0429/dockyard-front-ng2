@@ -1,7 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Boat} from '../boat.interface';
-import {Router} from '@angular/router';
-import {BoatService} from "../boat.service";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Boat } from '../boat.interface';
+import { Router } from '@angular/router';
+import { BoatService } from '../boat.service';
 
 @Component({
   selector: 'app-boat',
@@ -12,9 +12,6 @@ export class BoatComponent implements OnInit {
 
   @Input() boat: Boat;
   @Output() boatDeleted = new EventEmitter<Boat>();
-
-  editing = false;
-  editValue = '';
 
   constructor(private router: Router,
               private boatService: BoatService,
@@ -27,19 +24,6 @@ export class BoatComponent implements OnInit {
     this.router.navigate(['/detail-boat', boat.id]);
   }
 
-  onUpdate() {
-
-    this.editing = false;
-  }
-
-  onCancel() {
-    this.editing = false;
-  }
-
-  onEdit() {
-    this.editing = true;
-  }
-
   onDelete() {
     this.boatService.deleteBoat(this.boat.id)
       .subscribe(
@@ -48,6 +32,7 @@ export class BoatComponent implements OnInit {
           console.log('Boat deleted');
         }
       );
+    // TODO: un-sign this boat from all workers
   }
 
 }

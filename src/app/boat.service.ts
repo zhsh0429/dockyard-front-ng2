@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Boat } from './boat.interface';
 import 'rxjs/add/operator/map';
-import {Boat} from "./boat.interface";
 
 
 @Injectable()
@@ -33,10 +33,9 @@ export class BoatService {
       );
   }
 
-  addBoat(content: string) {
-    const body = JSON.stringify({content: content});
-    const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://192.168.10.10/api/quote', body, {headers: headers})
+  addBoat(boat: Boat) {
+    const body = JSON.stringify(boat);
+    return this.http.post(this.boatsUrl, body, {headers: this.headers})
       .map(
         (response: Response) => response.json()
       );

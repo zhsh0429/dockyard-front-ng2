@@ -10,6 +10,10 @@ import { NewBoatComponent } from './new-boat/new-boat.component';
 import { routing } from './app.routing';
 import { BoatService } from './boat.service';
 import { DetailBoatComponent } from './detail-boat/detail-boat.component';
+import { WorkerService} from './worker.service';
+import { WorkerComponent } from './worker/worker.component';
+import { WorkersComponent } from './workers/workers.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { DetailBoatComponent } from './detail-boat/detail-boat.component';
     BoatComponent,
     BoatsComponent,
     NewBoatComponent,
-    DetailBoatComponent
+    DetailBoatComponent,
+    WorkerComponent,
+    WorkersComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,7 @@ import { DetailBoatComponent } from './detail-boat/detail-boat.component';
     HttpModule,
     routing,
   ],
-  providers: [BoatService],
+  providers: [BoatService, WorkerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

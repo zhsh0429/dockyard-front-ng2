@@ -1,12 +1,16 @@
 <div id="app">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <a href="#" [routerLink]="['/']">Boats |</a>
-        <a href="#" [routerLink]="['/new-boat']">| Add a new Boat</a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Dockyard</a>
       </div>
+      <ul class="nav navbar-nav">
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/boats']">Boats</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/new-boat']">Add a new Boat</a></li>
+      </ul>
     </div>
-    <hr>
+  </nav>
+  <div class="container">
     <div class="row">
       <div class="col-xs-12">
         <router-outlet>

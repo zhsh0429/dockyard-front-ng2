@@ -1,0 +1,4 @@
+<app-worker *ngFor="let worker of workers" [worker]="worker" [boatId]="boatId" [showSigned]="showSigned"
+            (workerAdded)="onAdded($event)"></app-worker>
+<button *ngIf="showSigned" class="btn btn-primary" (click)="showToggle()">Sign a New Worker to this Boat</button>
+<button *ngIf="!showSigned" class="btn btn-primary" (click)="showToggle()">Back</button>

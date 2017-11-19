@@ -1,3 +1,62 @@
-<p>
-  new-boat works!
-</p>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" xmlns="http://www.w3.org/1999/html">
+  <h2>Boat Information</h2>
+  <div class="form-group">
+    <label for="name">name: </label>
+    <input type="text" class="form-control" id="name" name="name" required ngModel placeholder="name" #name="ngModel"/>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Name is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>type: </label>
+    <input type="text" class="form-control" id="type" name="type" required ngModel placeholder="type" #type="ngModel"/>
+    <div [hidden]="type.valid || type.pristine" class="alert alert-danger">
+      Type is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>photo(url address): </label>
+    <!--<img [src]="boat.photo" class="img-responsive img-rounded" [alt]="boat.name">-->
+    <input type="text" class="form-control" id="photo" name="photo" required ngModel placeholder="photo(url address)" #photo="ngModel"/>
+    <div [hidden]="photo.valid || photo.pristine" class="alert alert-danger">
+      Photo is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>length: </label>
+    <input type="number" class="form-control" id="length" name="length" required ngModel placeholder="length" #length="ngModel"/>
+    <div [hidden]="length.valid || length.pristine" class="alert alert-danger">
+      Length is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>work_description: </label>
+    <input type="text" class="form-control" id="work_description" name="work_description" required ngModel placeholder="work_description" #work_description="ngModel"/>
+    <div [hidden]="work_description.valid || work_description.pristine" class="alert alert-danger">
+      Work description is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>arrival_date: </label>
+    <input type="datetime-local" class="form-control" id="arrival_date" name="arrival_date" required ngModel placeholder="arrival_date" #arrival_date="ngModel"/>
+    <div [hidden]="arrival_date.valid || arrival_date.pristine" class="alert alert-danger">
+      Arrival date is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>delivery_date: </label>
+    <input type="datetime-local" class="form-control" id="delivery_date" name="delivery_date" required ngModel placeholder="delivery_date" #delivery_date="ngModel"/>
+    <div [hidden]="delivery_date.valid || delivery_date.pristine" class="alert alert-danger">
+      Delivery date is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>status: </label>
+    <input type="text" class="form-control" id="status" name="status" required ngModel placeholder="status" #status="ngModel"/>
+    <div [hidden]="status.valid || status.pristine" class="alert alert-danger">
+      Status is required
+    </div>
+  </div>
+
+  <button class="btn btn-primary" [disabled]="!f.form.valid">Create</button>
+</form>

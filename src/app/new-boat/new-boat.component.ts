@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { BoatService } from '../boat.service';
+import { Boat } from '../boat.interface';
+
 
 @Component({
   selector: 'app-new-boat',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewBoatComponent implements OnInit {
 
-  constructor() { }
+  boat: Boat;
+
+  constructor(
+    private boatService: BoatService
+  ) { }
 
   ngOnInit() {
   }
 
+  onSubmit(form: NgForm) {
+    this.boatService.addBoat(form.value)
+      .subscribe(
+        (boat: Boat) => alert('New Boat created!'),
+        (error: Error) => alert('Failed')
+      );
+    form.reset();
+  }
 }
