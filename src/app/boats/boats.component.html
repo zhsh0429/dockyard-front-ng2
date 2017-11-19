@@ -1,0 +1,3 @@
+<!--<button class="btn btn-primary" (click)="onGetBoats()">Get Boats</button>-->
+<!--<hr>-->
+<app-boat *ngFor="let boat of boats" [boat]="boat" (boatDeleted)="onDeleted($event)"></app-boat>

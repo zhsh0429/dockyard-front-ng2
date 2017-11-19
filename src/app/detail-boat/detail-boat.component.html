@@ -1,0 +1,58 @@
+<div *ngIf="boat">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>{{boat.name}} details!</h2>
+      <div class="form-group">
+        <div>
+          <label>id: </label>{{boat.id}}
+        </div>
+        <div>
+          <label>name: </label>
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.name" placeholder="name"/>
+        </div>
+        <div>
+          <label>type: </label>
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.type" placeholder="name"/>
+        </div>
+        <div>
+          <label>photo: </label>
+          <img [src]="boat.photo" class="img-responsive img-rounded" [alt]="boat.name">
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.photo" placeholder="name"/>
+        </div>
+        <div>
+          <label>length: </label>
+          <input type="number" class="form-control" [readonly]="readonly" [(ngModel)]="boat.length" placeholder="name"/>
+        </div>
+        <div>
+          <label>work_description: </label>
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.work_description" placeholder="name"/>
+        </div>
+        <div>
+          <label>arrival_date: </label>
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.arrival_date" placeholder="name"/>
+        </div>
+        <div>
+          <label>delivery_date: </label>
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.delivery_date" placeholder="name"/>
+        </div>
+        <div>
+          <label>status: </label>
+          <input type="text" class="form-control" [readonly]="readonly" [(ngModel)]="boat.status" placeholder="name"/>
+        </div>
+      </div>
+
+      <div *ngIf="readonly">
+        <button class="btn btn-primary" (click)="goBack()">Go Back to Boat List</button>
+        <button class="btn btn-primary" (click)="edit()">Edit this Boat Information</button>
+      </div>
+      <div *ngIf="!readonly">
+        <button class="btn btn-primary" (click)="cancel()">Cancel Changes</button>
+        <button class="btn btn-primary" (click)="save()">Save Changes</button>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h2>Workers for {{boat.name}}</h2>
+      <app-workers *ngIf="boat" [boatId]="boat.id"></app-workers>
+    </div>
+  </div>
+</div>

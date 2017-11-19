@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {{ boat.name }}
+  </div>
+  <div class="panel-body">
+    <img [src]="boat.photo" class="img-responsive img-rounded" [alt]="boat.name">
+  </div>
+  <div class="panel-footer">
+    <button class="btn btn-primary" (click)="gotoDetail(boat)">Detail</button>
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+  </div>
+</div>
