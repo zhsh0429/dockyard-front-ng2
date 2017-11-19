@@ -13,10 +13,10 @@ export class BoatsComponent implements OnInit {
   boats: Boat[];
 
   constructor(private boatService: BoatService,
+              private router: Router,
   ) {}
 
   ngOnInit() {
-    this.onGetBoats();
   }
 
   onGetBoats() {

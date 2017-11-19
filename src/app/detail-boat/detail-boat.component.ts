@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { BoatService } from '../boat.service';
-import { Boat } from '../boat.interface';
+import {BoatService} from '../boat.service';
+import {Boat} from '../boat.interface';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -17,6 +17,7 @@ export class DetailBoatComponent implements OnInit {
 
   boat: Boat;
   originalBoat: Boat;
+
   readonly = true;
 
   constructor(
@@ -29,7 +30,7 @@ export class DetailBoatComponent implements OnInit {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.boatService.getBoat(+params.get('id')))
       .subscribe(
-        (boat: Boat) => { this.boat = boat; },
+        (boat: Boat) => this.boat = boat,
         (error: Response) => console.log(error),
       );
   }
@@ -44,6 +45,7 @@ export class DetailBoatComponent implements OnInit {
   }
 
   cancel(): void {
+    // TODO: restore the original data
     this.boat = this.originalBoat;
     this.readonly = true;
   }

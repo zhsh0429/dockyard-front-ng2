@@ -10,10 +10,6 @@ import { NewBoatComponent } from './new-boat/new-boat.component';
 import { routing } from './app.routing';
 import { BoatService } from './boat.service';
 import { DetailBoatComponent } from './detail-boat/detail-boat.component';
-import { WorkerService} from './worker.service';
-import { WorkerComponent } from './worker/worker.component';
-import { WorkersComponent } from './workers/workers.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +17,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BoatComponent,
     BoatsComponent,
     NewBoatComponent,
-    DetailBoatComponent,
-    WorkerComponent,
-    WorkersComponent,
-    WelcomeComponent,
+    DetailBoatComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +25,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     HttpModule,
     routing,
   ],
-  providers: [BoatService, WorkerService],
+  providers: [BoatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
